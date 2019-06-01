@@ -1,11 +1,11 @@
 import telepot
 import requests
-token_owm="3f81961deb7cd75cd31287e817edbff9"
+token_owm="token OWM"
 dict_word={
         "bloken clouds":"clima fechado",
         "light rain":"chuva leve"
         }
-bot=telepot.Bot("886260629:AAHBdyKjgjkJrdf8_DNIir3h2dt7wa6_xLE")
+bot=telepot.Bot("Seu token do botFather")
 
 def req(msg):
     user=msg['chat']
@@ -19,7 +19,7 @@ def req(msg):
 
         print("Mensagem: {} enviada para id: {}".format("Ola,Bem vindo",user['id']))
     if mens=='clima':
-        url="http://api.openweathermap.org/data/2.5/weather?appid={}&q=marmeleiro,br".format(token_owm)
+        url="http://api.openweathermap.org/data/2.5/weather?appid={}&q=cidade,pais".format(token_owm)
         clima=requests.get(url).json()
         status=clima['weather']
         for x in status:
